@@ -1,0 +1,4 @@
+-- Create Debezium user with CDC privileges
+CREATE USER IF NOT EXISTS 'debezium'@'%' IDENTIFIED BY 'debezium';
+GRANT SELECT, RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'debezium'@'%';
+FLUSH PRIVILEGES;
