@@ -1,0 +1,21 @@
+{
+  "name": "inventory-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "tasks.max": "1",
+    "database.hostname": "mysql",
+    "database.port": "3306",
+    "database.user": "debezium",
+    "database.password": "debezium",
+    "database.server.id": "184054",
+    "topic.prefix": "dbserver1",
+    "database.include.list": "inventory",
+    "table.include.list": "inventory.customers",
+    "include.schema.changes": "false",
+    "schema.history.internal": "io.debezium.storage.file.history.FileSchemaHistory",
+    "schema.history.internal.file.filename": "/debezium/schemahistory.txt",
+    "decimal.handling.mode": "double",
+    "tombstones.on.delete": "false",
+    "snapshot.mode": "initial"
+  }
+}
